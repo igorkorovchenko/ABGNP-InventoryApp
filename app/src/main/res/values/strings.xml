@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Inventory App</string>
+    <string name="default_product_name">P</string>
+    <string name="default_supplier_name">S</string>
+    <string name="default_supplier_phone_prefix">#</string>
+    <string name="dbg_raw_id">Row id:</string>
+</resources>
