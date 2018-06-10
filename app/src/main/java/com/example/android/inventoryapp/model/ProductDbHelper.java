@@ -19,7 +19,7 @@ public class ProductDbHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
-    public ProductDbHelper(Context context) {
+    ProductDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -32,8 +32,6 @@ public class ProductDbHelper extends SQLiteOpenHelper {
                 + ProductEntry.COLUMN_PRODUCT_QUANTITY + " INTEGER NOT NULL DEFAULT 0, "
                 + ProductEntry.COLUMN_SUPPLIER_NAME + " TEXT NOT NULL, "
                 + ProductEntry.COLUMN_SUPPLIER_PHONE + " TEXT NOT NULL);";
-
-        // Execute the SQL statement
         db.execSQL(SQL_CREATE_PETS_TABLE);
     }
 

@@ -1,7 +1,19 @@
 <resources>
     <string name="app_name">Inventory App</string>
-    <string name="default_product_name">P</string>
-    <string name="default_supplier_name">S</string>
-    <string name="default_supplier_phone_prefix">#</string>
-    <string name="dbg_raw_id">Row id:</string>
+    <string name="default_product_name">Product</string>
+    <string name="default_supplier_name">Supplier</string>
+    <string name="dbg_db_raw_id">Row id:</string>
+    <string name="dbg_db_unknown_uri">Cannot query unknown URI</string>
+    <string name="dbr_db_insertion_unsupported">Insertion is not supported for</string>
+    <string name="dbg_db_invalid_product_name">Product requires a name</string>
+    <string name="dbg_db_invalid_product_price">Product requires valid price</string>
+    <string name="dbg_db_invalid_product_quantity">Product requires valid quantity</string>
+    <string name="dbg_db_invalid_supplier_name">Product requires a supplier\'s name</string>
+    <string name="dbg_db_invalid_supplier_phone">Product requires a supplier\'s phone</string>
+    <string name="dbr_db_failed_raw_insertion">Failed to insert row for</string>
+    <string name="dbg_db_updating_not_available">Update is not supported for</string>
+    <string name="dbg_db_deletion_not_available">Deletion is not supported for</string>
+    <string name="default_product_price">$%d</string>
+    <string name="default_product_quantity">Left: %d</string>
+    <string name="product_buy">Buy</string>
 </resources>
