@@ -45,11 +45,11 @@ public class ProductContract {
         public final static String COLUMN_SUPPLIER_PHONE = "supplier_phone";
 
         public static boolean isValidPrice(Integer price) {
-            return price > 0;
+            return price >= 0;
         }
 
         public static boolean isValidQuantity(Integer quantity) {
-            return quantity > 0;
+            return quantity >= 0;
         }
     }
 }

@@ -24,7 +24,21 @@
     <string name="label_supplier_phone">Phone number of the supplier</string>
     <string name="template_product_price">$%d</string>
     <string name="template_product_quantity">Left: %d</string>
-    <string name="toast_insert_product_failed">New product hasn\'t been added</string>
-    <string name="toast_insert_product_successful">New product has been added</string>
+    <string name="toast_saving_product_failed">Product has not been saved</string>
+    <string name="toast_saving_product_successful">Product has been saved</string>
+    <string name="toast_product_is_over">This product is over</string>
     <string name="button_add_new_product">Add new product</string>
+    <string name="button_edit_product">Confirm changes</string>
+    <string name="editor_activity_title_new_product">Adding of a new product</string>
+    <string name="editor_activity_title_edit_product">Editing of the product</string>
+    <string name="unsaved_changes_dialog_msg">You can lost all entered data</string>
+    <string name="unsaved_changes_dialog_discard">Cancel editing</string>
+    <string name="unsaved_changes_dialog_keep_editing">Return to editing</string>
+    <string name="detail_activity_title">Product details</string>
+    <string name="detail_activity_edit_button">Edit the product</string>
+    <string name="increase_quantity">+</string>
+    <string name="decrease_quantity">-</string>
+    <string name="call_to_supplier">Call...</string>
+    <string name="toast_permissions_granted">All permissions are granted</string>
+    <string name="no_products">No products are in the Database</string>
 </resources>

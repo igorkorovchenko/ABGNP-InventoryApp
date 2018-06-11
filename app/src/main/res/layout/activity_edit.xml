@@ -7,83 +7,99 @@
     android:layout_height="match_parent" >
 
     <LinearLayout
+        android:id="@+id/edit_product_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/default_padding"
+        android:padding="@dimen/default_margin"
         android:orientation="vertical"
-        tools:context=".activities.AddInventoryActivity">
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:context=".activities.EditActivity">
 
         <TextView
-            android:id="@+id/new_product_name_label"
+            android:id="@+id/edit_product_name_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_product_name" />
 
         <EditText
-            android:id="@+id/new_product_name"
+            android:id="@+id/edit_product_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/default_product_name"
+            android:clickable="true"
+            android:focusable="true"
             android:inputType="text" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/default_padding"
+            android:layout_marginTop="@dimen/default_margin"
             android:text="@string/label_product_price" />
 
         <EditText
-            android:id="@+id/new_product_price"
+            android:id="@+id/edit_product_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/default_product_price"
+            android:clickable="true"
+            android:focusable="true"
             android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/default_padding"
+            android:layout_marginTop="@dimen/default_margin"
             android:text="@string/label_product_quantity" />
 
         <EditText
-            android:id="@+id/new_product_quantity"
+            android:id="@+id/edit_product_quantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/default_product_quantity"
+            android:clickable="true"
+            android:focusable="true"
             android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/default_padding"
+            android:layout_marginTop="@dimen/default_margin"
             android:text="@string/label_supplier_name" />
 
         <EditText
-            android:id="@+id/new_supplier_name"
+            android:id="@+id/edit_supplier_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/default_supplier_name"
+            android:clickable="true"
+            android:focusable="true"
             android:inputType="text" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/default_padding"
+            android:layout_marginTop="@dimen/default_margin"
             android:text="@string/label_supplier_phone" />
 
         <EditText
-            android:id="@+id/new_supplier_phone"
+            android:id="@+id/edit_supplier_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/default_supplier_phone"
+            android:clickable="true"
+            android:focusable="true"
             android:inputType="phone" />
 
         <Button
-            android:id="@+id/new_product_add"
+            android:id="@+id/edit_product_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/default_padding"
-            android:text="@string/button_add_new_product"/>
+            android:layout_marginTop="@dimen/default_margin"
+            android:background="@color/colorAccent"
+            android:padding="@dimen/default_padding"
+            android:text="@string/button_add_new_product"
+            android:textColor="@color/buttonText" />
 
     </LinearLayout>
 

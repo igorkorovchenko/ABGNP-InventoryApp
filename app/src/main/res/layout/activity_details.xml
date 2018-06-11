@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_margin"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:context=".activities.DetailsActivity"
+        android:descendantFocusability="blocksDescendants" >
+
+        <TextView
+            android:id="@+id/detail_product_name_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_product_name" />
+
+        <TextView
+            android:id="@+id/detail_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/detail_field_text_size"
+            android:text="@string/default_product_name" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/label_product_price" />
+
+        <TextView
+            android:id="@+id/detail_product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/detail_field_text_size"
+            android:text="@string/default_product_price" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:descendantFocusability="blocksDescendants" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/increase_quantity"
+                android:descendantFocusability="blocksDescendants" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="@string/label_product_quantity" />
+
+                <TextView
+                    android:id="@+id/detail_product_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/default_product_quantity"
+                    android:textSize="@dimen/detail_field_text_size" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/increase_quantity"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_toStartOf="@+id/decrease_quantity"
+                android:textColor="@color/buttonText"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/increase_quantity" />
+
+            <Button
+                android:id="@+id/decrease_quantity"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/buttonText"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/decrease_quantity" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/label_supplier_name" />
+
+        <TextView
+            android:id="@+id/detail_supplier_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/detail_field_text_size"
+            android:text="@string/default_supplier_name" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:descendantFocusability="blocksDescendants" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/call_to_supplier"
+                android:orientation="vertical"
+                android:descendantFocusability="blocksDescendants" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="@string/label_supplier_phone" />
+
+                <TextView
+                    android:id="@+id/detail_supplier_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/detail_field_text_size"
+                    android:text="@string/default_supplier_phone" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/call_to_supplier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/buttonText"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/call_to_supplier"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
