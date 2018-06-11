@@ -205,6 +205,6 @@ public class ProductProvider extends ContentProvider {
                     Objects.requireNonNull(getContext())
                             .getString(R.string.dbg_db_invalid_supplier_phone));
         }
-        return true;
+        return false;
     }
 }

@@ -2,10 +2,13 @@ package com.example.android.inventoryapp.activities;
 
 import android.app.LoaderManager;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.android.inventoryapp.R;
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupCatalog();
+        setupAddButton();
         getLoaderManager().initLoader(PRODUCT_LOADER, null, this);
     }
 
@@ -53,5 +57,20 @@ public class MainActivity extends AppCompatActivity implements
         ListView productListView = findViewById(R.id.catalog_list);
         productCursorAdapter = new ProductCursorAdapter(this, null, 0);
         productListView.setAdapter(productCursorAdapter);
+    }
+
+    private void setupAddButton() {
+        FloatingActionButton addButton = findViewById(R.id.catalog_adding);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setupIntentToAddingActivity();
+            }
+        });
+    }
+
+    private void setupIntentToAddingActivity() {
+        Intent intent = new Intent(this, AddInventoryActivity.class);
+        startActivity(intent);
     }
 }

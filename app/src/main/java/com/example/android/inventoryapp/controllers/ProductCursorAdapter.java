@@ -37,8 +37,12 @@ public class ProductCursorAdapter extends CursorAdapter {
         int priceColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_PRICE);
         int quantityColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_QUANTITY);
         String productName = cursor.getString(nameColumnIndex);
-        String productPrice = cursor.getString(priceColumnIndex);
-        String productQuantity = cursor.getString(quantityColumnIndex);
+        String productPrice = String.format(
+                context.getString(R.string.template_product_price),
+                cursor.getInt(priceColumnIndex));
+        String productQuantity = String.format(
+                context.getString(R.string.template_product_quantity),
+                cursor.getInt(quantityColumnIndex));
         nameTextView.setText(productName);
         priceTextView.setText(productPrice);
         quantityTextView.setText(productQuantity);

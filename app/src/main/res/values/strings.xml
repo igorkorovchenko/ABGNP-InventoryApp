@@ -13,7 +13,18 @@
     <string name="dbr_db_failed_raw_insertion">Failed to insert row for</string>
     <string name="dbg_db_updating_not_available">Update is not supported for</string>
     <string name="dbg_db_deletion_not_available">Deletion is not supported for</string>
-    <string name="default_product_price">$%d</string>
-    <string name="default_product_quantity">Left: %d</string>
+    <string name="default_product_price">$100</string>
+    <string name="default_product_quantity">30</string>
     <string name="product_buy">Buy</string>
+    <string name="default_supplier_phone">+18001234576</string>
+    <string name="label_product_name">Product name</string>
+    <string name="label_product_price">Price of the product</string>
+    <string name="label_product_quantity">Quantity of the product</string>
+    <string name="label_supplier_name">Supplier name</string>
+    <string name="label_supplier_phone">Phone number of the supplier</string>
+    <string name="template_product_price">$%d</string>
+    <string name="template_product_quantity">Left: %d</string>
+    <string name="toast_insert_product_failed">New product hasn\'t been added</string>
+    <string name="toast_insert_product_successful">New product has been added</string>
+    <string name="button_add_new_product">Add new product</string>
 </resources>
