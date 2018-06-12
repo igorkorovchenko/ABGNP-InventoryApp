@@ -194,8 +194,7 @@ public class EditActivity extends AppCompatActivity implements LoaderManager.Loa
         showUnsavedChangesDialog(discardButtonClickListener);
     }
 
-    private void showUnsavedChangesDialog(
-        DialogInterface.OnClickListener discardButtonClickListener) {
+    private void showUnsavedChangesDialog(DialogInterface.OnClickListener discardButtonClickListener) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(R.string.unsaved_changes_dialog_msg);
             builder.setPositiveButton(R.string.unsaved_changes_dialog_discard, discardButtonClickListener);
@@ -218,32 +217,29 @@ public class EditActivity extends AppCompatActivity implements LoaderManager.Loa
         String supplierPhoneString = supplierPhone.getText().toString();
 
         ContentValues values = new ContentValues();
-        if (TextUtils.isEmpty(productNameString)) {
-            return false;
+        if (!TextUtils.isEmpty(productNameString)) {
+            values.put(ProductEntry.COLUMN_PRODUCT_NAME, productNameString);
         }
-        values.put(ProductEntry.COLUMN_PRODUCT_NAME, productNameString);
 
         int price = 0;
         if (!TextUtils.isEmpty(productPriceString)) {
             price = Integer.parseInt(productPriceString);
+            values.put(ProductEntry.COLUMN_PRODUCT_PRICE, price);
         }
-        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, price);
 
         int quantity = 0;
-        if (!TextUtils.isEmpty(productPriceString)) {
+        if (!TextUtils.isEmpty(productQuantityString)) {
             quantity = Integer.parseInt(productQuantityString);
+            values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantity);
         }
-        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantity);
 
-        if (TextUtils.isEmpty(supplierNameString)) {
-            return false;
+        if (!TextUtils.isEmpty(supplierNameString)) {
+            values.put(ProductEntry.COLUMN_SUPPLIER_NAME, supplierNameString);
         }
-        values.put(ProductEntry.COLUMN_SUPPLIER_NAME, supplierNameString);
 
-        if (TextUtils.isEmpty(supplierPhoneString)) {
-            return false;
+        if (!TextUtils.isEmpty(supplierPhoneString)) {
+            values.put(ProductEntry.COLUMN_SUPPLIER_PHONE, supplierPhoneString);
         }
-        values.put(ProductEntry.COLUMN_SUPPLIER_PHONE, supplierPhoneString);
 
         if (currentProductUri == null) {
             Uri newUri = getContentResolver().insert(ProductEntry.CONTENT_URI, values);
@@ -255,7 +251,7 @@ public class EditActivity extends AppCompatActivity implements LoaderManager.Loa
             } else {
                 Toast.makeText(this,
                         getString(R.string.toast_saving_product_successful),
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
                 return true;
             }
         } else {
@@ -268,7 +264,7 @@ public class EditActivity extends AppCompatActivity implements LoaderManager.Loa
             } else {
                 Toast.makeText(this,
                         getString(R.string.toast_saving_product_successful),
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
                 return true;
             }
         }

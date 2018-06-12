@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.android.inventoryapp.R;
 import com.example.android.inventoryapp.model.ProductContract.ProductEntry;
@@ -148,6 +149,60 @@ public class ProductProvider extends ContentProvider {
         }
     }
 
+    private boolean isInvalidProduct(ContentValues values) {
+        String name = values.getAsString(ProductEntry.COLUMN_PRODUCT_NAME);
+        if (name == null) {
+            Toast.makeText(
+                    getContext(),
+                    Objects.requireNonNull(getContext())
+                            .getString(R.string.dbg_db_invalid_product_name),
+                    Toast.LENGTH_SHORT
+            ).show();
+            return true;
+        }
+        Integer price = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_PRICE);
+        if (price == null || !ProductEntry.isValidPrice(price)) {
+            Toast.makeText(
+                    getContext(),
+                    Objects.requireNonNull(getContext())
+                            .getString(R.string.dbg_db_invalid_product_price),
+                    Toast.LENGTH_SHORT
+            ).show();
+            return true;
+        }
+        Integer quantity = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_QUANTITY);
+        if (quantity == null || !ProductEntry.isValidQuantity(quantity)) {
+            Toast.makeText(
+                    getContext(),
+                    Objects.requireNonNull(getContext())
+                            .getString(R.string.dbg_db_invalid_product_quantity),
+                    Toast.LENGTH_SHORT
+            ).show();
+            return true;
+        }
+        String supplierName = values.getAsString(ProductEntry.COLUMN_SUPPLIER_NAME);
+        if (supplierName == null) {
+            Toast.makeText(
+                    getContext(),
+                    Objects.requireNonNull(getContext())
+                            .getString(R.string.dbg_db_invalid_supplier_name),
+                    Toast.LENGTH_SHORT
+            ).show();
+            return true;
+        }
+        String supplierPhone = values.getAsString(ProductEntry.COLUMN_SUPPLIER_NAME);
+        if (supplierPhone == null) {
+            Toast.makeText(
+                    getContext(),
+                    Objects.requireNonNull(getContext())
+                            .getString(R.string.dbg_db_invalid_supplier_phone),
+                    Toast.LENGTH_SHORT
+            ).show();
+            return true;
+        }
+        return false;
+    }
+
     private Uri insertProduct(Uri uri, ContentValues values) {
         if (isInvalidProduct(values)) return null;
         SQLiteDatabase database = dbHelper.getWritableDatabase();
@@ -172,39 +227,5 @@ public class ProductProvider extends ContentProvider {
             Objects.requireNonNull(getContext()).getContentResolver().notifyChange(uri, null);
         }
         return rowsUpdated;
-    }
-
-    private boolean isInvalidProduct(ContentValues values) {
-        String name = values.getAsString(ProductEntry.COLUMN_PRODUCT_NAME);
-        if (name == null) {
-            throw new IllegalArgumentException(
-                    Objects.requireNonNull(getContext())
-                            .getString(R.string.dbg_db_invalid_product_name));
-        }
-        Integer price = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_PRICE);
-        if (price == null || !ProductEntry.isValidPrice(price)) {
-            throw new IllegalArgumentException(
-                    Objects.requireNonNull(getContext())
-                            .getString(R.string.dbg_db_invalid_product_price));
-        }
-        Integer quantity = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_QUANTITY);
-        if (quantity == null || !ProductEntry.isValidQuantity(quantity)) {
-            throw new IllegalArgumentException(
-                    Objects.requireNonNull(getContext())
-                            .getString(R.string.dbg_db_invalid_product_quantity));
-        }
-        String supplierName = values.getAsString(ProductEntry.COLUMN_SUPPLIER_NAME);
-        if (supplierName == null) {
-            throw new IllegalArgumentException(
-                    Objects.requireNonNull(getContext())
-                            .getString(R.string.dbg_db_invalid_supplier_name));
-        }
-        String supplierPhone = values.getAsString(ProductEntry.COLUMN_SUPPLIER_NAME);
-        if (supplierPhone == null) {
-            throw new IllegalArgumentException(
-                    Objects.requireNonNull(getContext())
-                            .getString(R.string.dbg_db_invalid_supplier_phone));
-        }
-        return false;
     }
 }

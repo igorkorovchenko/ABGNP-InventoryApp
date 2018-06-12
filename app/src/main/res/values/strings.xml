@@ -34,6 +34,8 @@
     <string name="unsaved_changes_dialog_msg">You can lost all entered data</string>
     <string name="unsaved_changes_dialog_discard">Cancel editing</string>
     <string name="unsaved_changes_dialog_keep_editing">Return to editing</string>
+    <string name="unsaved_deleting_dialog_discard">Cancel deleting</string>
+    <string name="unsaved_deleting_dialog_keep_editing">Delete anyway</string>
     <string name="detail_activity_title">Product details</string>
     <string name="detail_activity_edit_button">Edit the product</string>
     <string name="increase_quantity">+</string>

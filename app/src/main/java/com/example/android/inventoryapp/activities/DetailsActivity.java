@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.LoaderManager;
 import android.content.ContentValues;
 import android.content.CursorLoader;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
@@ -11,6 +12,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -64,9 +66,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
                 startActivity(intent);
                 break;
             case R.id.menu_detail_delete:
-                String where = ProductContract.ProductEntry._ID + "=" + currentProductUri.getLastPathSegment();
-                getContentResolver().delete(currentProductUri, where, null);
-                finish();
+                setupDialog();
                 break;
             case android.R.id.home:
                 super.onBackPressed();
@@ -117,6 +117,34 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
                 startActivity(intent);
             }
         });
+    }
+
+    private void setupDialog() {
+        DialogInterface.OnClickListener discardButtonClickListener =
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String where = ProductContract.ProductEntry._ID + "=" + currentProductUri.getLastPathSegment();
+                        getContentResolver().delete(currentProductUri, where, null);
+                        finish();
+                    }
+                };
+        showUnsavedChangesDialog(discardButtonClickListener);
+    }
+
+    private void showUnsavedChangesDialog(DialogInterface.OnClickListener discardButtonClickListener) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.unsaved_changes_dialog_msg);
+        builder.setPositiveButton(R.string.unsaved_deleting_dialog_keep_editing, discardButtonClickListener);
+        builder.setNegativeButton(R.string.unsaved_deleting_dialog_discard, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     private void changeQuantity(Integer amount) {
