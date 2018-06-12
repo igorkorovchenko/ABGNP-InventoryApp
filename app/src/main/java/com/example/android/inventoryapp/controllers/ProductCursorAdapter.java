@@ -2,7 +2,6 @@ package com.example.android.inventoryapp.controllers;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.inventoryapp.R;
-import com.example.android.inventoryapp.activities.EditActivity;
-import com.example.android.inventoryapp.activities.MainActivity;
 import com.example.android.inventoryapp.model.ProductContract.ProductEntry;
 
 /**

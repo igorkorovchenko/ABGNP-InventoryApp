@@ -40,7 +40,7 @@
     <string name="detail_activity_edit_button">Edit the product</string>
     <string name="increase_quantity">+</string>
     <string name="decrease_quantity">-</string>
-    <string name="call_to_supplier">Call...</string>
+    <string name="call_to_supplier">Call…</string>
     <string name="toast_permissions_granted">All permissions are granted</string>
     <string name="no_products">No products are in the Database</string>
 </resources>
