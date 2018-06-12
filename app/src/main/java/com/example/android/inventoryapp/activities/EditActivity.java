@@ -221,15 +221,13 @@ public class EditActivity extends AppCompatActivity implements LoaderManager.Loa
             values.put(ProductEntry.COLUMN_PRODUCT_NAME, productNameString);
         }
 
-        int price = 0;
         if (!TextUtils.isEmpty(productPriceString)) {
-            price = Integer.parseInt(productPriceString);
+            int price = Integer.parseInt(productPriceString);
             values.put(ProductEntry.COLUMN_PRODUCT_PRICE, price);
         }
 
-        int quantity = 0;
         if (!TextUtils.isEmpty(productQuantityString)) {
-            quantity = Integer.parseInt(productQuantityString);
+            int quantity = Integer.parseInt(productQuantityString);
             values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantity);
         }
 
